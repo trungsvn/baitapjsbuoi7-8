@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css"
+        integrity="sha512-SgaqKKxJDQ/tAUAAXzvxZz33rmn7leYDYfBP+YoMRSENhf3zJyx3SBASt/OfeQwBHA1nxMis7mM3EV/oYT6Fdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    
+    <div class="container">
+        <h1>BÀI TẬP JS BUỔI 7-8</h1>
+        <input id="number" type="number" placeholder="Nhập dãy số">
+        <button onclick="myFunction()" id="btn" class="btn">Thêm số</button>
+        <div class="result">
+            <i class="fa-solid fa-hand-point-right"></i>
+            <span id="result"></span>
+        </div>
+        <br>
+
+        <button onclick="myFunction1()" id="btn1" class="btnBig">
+            <p class="text-left">
+                <i class="fa-solid fa-1"></i>
+                Tổng số dương
+            </p>
+            <i class="text-right fa-solid fa-chevron-down"></i>
+
+        </button>
+        <div id="detail1" class="detail">
+            <div>
+                <br>
+                <button onclick="tongsoduong()" class="btn1">Tính tổng</button>
+            </div>
+            <br>
+            <div class="result">
+                <i class="fa-solid fa-hand-point-right"></i>
+                <span id="tongsoduongla"></span>
+            </div>
+        </div>
+        <br>
+        <button onclick="myFunction2()" id="btn2" class="btnBig">
+            <p class="text-left">
+                <i class="fa-solid fa-2"></i>
+                Đếm số dương
+            </p>
+            <i class="text-right fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="detail2" class="detail">
+            <div>
+                <br>
+                <button onclick="demso()" class="btn2">Đếm số</button>
+            </div>
+            <br>
+            <div class="result">
+                <i class="fa-solid fa-hand-point-right"></i>
+                <span id="soduongla"></span>
+            </div>
+        </div>
+        <br>
+        <button onclick="myFunction3()" id="btn3" class="btnBig">
+            <p class="text-left">
+                <i class="fa-solid fa-3"></i>
+                Tìm số nhỏ nhất
+            </p>
+            <i class="text-right fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="detail3" class="detail">
+            <div>
+                <br>
+                <button onclick="sonhonhat()" class="btn3">Tìm số nhỏ nhất</button>
+            </div>
+            <br>
+            <div class="result">
+                <i class="fa-solid fa-hand-point-right"></i>
+                <span id="sonhonhatla"></span>
+            </div>
+        </div>
+        <br>
+        <button onclick="myFunction4()" id="btn4" class="btnBig">
+            <p class="text-left">
+                <i class="fa-solid fa-4"></i>
+                Tìm số dương nhỏ nhất
+            </p>
+            <i class="text-right fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="detail4" class="detail">
+            <div>
+                <br>
+                <button onclick="soduongnhonhat()" class="btn4">Tìm số dương nhỏ nhất</button>
+            </div>
+            <br>
+            <div class="result">
+                <i class="fa-solid fa-hand-point-right"></i>
+                <span id="soduongnhonhatla"></span>
+            </div>
+        </div>
+        <br>
+        <button onclick="myFunction5()" id="btn5" class="btnBig">
+            <p class="text-left">
+                <i class="fa-solid fa-5"></i>
+                Tìm số chẵn cuối cùng
+            </p>
+            <i class="text-right fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="detail5" class="detail">
+            <div>
+                <br>
+                <button onclick="sochancuoicung()" class="btn5">Tìm số chẵn cuối cùng</button>
+            </div>
+            <br>
+            <div class="result">
+                <i class="fa-solid fa-hand-point-right"></i>
+                <span id="sochancuoicungla"></span>
+            </div>
+        </div>
+        <br>
+        <button onclick="myFunction6()" id="btn6" class="btnBig">
+            <p class="text-left">
+                <i class="fa-solid fa-6"></i>
+                Đổi chỗ
+            </p>
+            <i class="text-right fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="detail6" class="detail">
+            <br>
+            <input id="vitri1" type="number" placeholder="Nhập vị trí 1">
+            <input id="vitri2" type="number" placeholder="Nhập vị trí 2">
+            <div>
+                <br>
+                <button onclick="doicho()" class="btn6">Đổi chỗ</button>
+            </div>
+            <br>
+            <div class="result">
+                <i class="fa-solid fa-hand-point-right"></i>
+                <span id="doivitrichuoi"></span>
+            </div>
+        </div>
+        <button onclick="myFunction7()" id="btn7" class="btnBig">
+            <p class="text-left">
+                <i class="fa-solid fa-7"></i>
+                Sắp xếp tăng dần
+            </p>
+            <i class="text-right fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="detail7" class="detail">
+            <div>
+                <br>
+                <button onclick="sapxeptangdan()" class="btn7">Sắp xếp</button>
+            </div>
+            <br>
+            <div class="result">
+                <i class="fa-solid fa-hand-point-right"></i>
+                <span id="chuoitangdan"></span>
+            </div>
+        </div>
+        <button onclick="myFunction8()" id="btn8" class="btnBig">
+            <p class="text-left">
+                <i class="fa-solid fa-8"></i>
+                Tìm số nguyên tố đầu tiên
+            </p>
+            <i class="text-right fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="detail8" class="detail">
+            <div>
+                <br>
+                <button onclick="songuyento()" class="btn8">Tìm số nguyên tố</button>
+            </div>
+            <br>
+            <div class="result">
+                <i class="fa-solid fa-hand-point-right"></i>
+                <span id="songuyentodautien"></span>
+            </div>
+        </div>
+        <button onclick="myFunction9()" id="btn9" class="btnBig">
+            <p class="text-left">
+                <i class="fa-solid fa-9"></i>
+                Đếm số nguyên
+            </p>
+            <i class="text-right fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="detail9" class="detail">
+            <div>
+                <br>
+                <button onclick="demsonguyen()" class="btn9">Đếm số nguyên</button>
+            </div>
+            <br>
+            <div class="result">
+                <i class="fa-solid fa-hand-point-right"></i>
+                <Span id="songuyen"></Span>
+            </div>
+        </div>
+        <button onclick="myFunction10()" id="btn19" class="btnBig">
+            <p class="text-left">
+                <i class="fa-solid fa-1"></i>
+                <i class="fa-solid fa-0"></i>
+                So sánh số lượng số âm và dương
+            </p>
+            <i class="text-right fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="detail10" class="detail">
+            <div>
+                <br>
+                <button class="btn10">So sánh</button>
+            </div>
+            <br>
+            <div class="result">
+                <i class="fa-solid fa-hand-point-right"></i>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
